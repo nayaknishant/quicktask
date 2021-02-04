@@ -1,5 +1,5 @@
 f = open('data/train.txt', 'r')
-Lines = f.readlines()
+lines = f.readlines()
 
 def is_float(value):
   try:
@@ -11,7 +11,7 @@ def is_float(value):
 
 count = 0
 # Strips the newline character
-for line in Lines:
+for line in lines:
     count += 1
     print("Line{}: {}".format(count, line.strip()))
     if line.strip() == 'H' or line.strip() == 'M':
