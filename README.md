@@ -9,5 +9,7 @@ python3 classifier.py
 
 Output:
 ```
+Training logistic regression model on training data...
+Classifying test data using logistic regression model...
 F1 score using logistic regression classifier: 0.7675675675675675
 ```
