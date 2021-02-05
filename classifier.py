@@ -37,7 +37,7 @@ f1_score = f1_score(y_pred, y_val))
 print(f1_score)
 '''
 
-clf = LogisticRegression(random_state=0).fit(bleu_scores, labels_to_binary)
+clf = LogisticRegression(random_state=0, solver='lbfgs').fit(bleu_scores, labels_to_binary)
 train.close()
 
 
