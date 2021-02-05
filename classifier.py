@@ -59,8 +59,9 @@ bleu_scores = np.asarray(bleu_lists[0]).reshape(-1, 1)
 bleu_labels = bleu_lists[1]
 labels_to_binary = np.asarray([1 if label == 'H' else 0 for label in bleu_labels])
 
-y_pred = clf.predict(bleu_scores)
-f1_score = f1_score(labels_to_binary, y_pred)
 
+y_pred = clf.predict(bleu_scores)
+
+f1_score = f1_score(labels_to_binary, y_pred)
 print("F1 score using logistic regression classifier: {score}".format(score = str(f1_score)))
 test.close()
