@@ -41,8 +41,6 @@ print(f1_score)
 clf = LogisticRegression(random_state=0, solver='lbfgs').fit(bleu_scores, labels_to_binary)
 train.close()
 
-
-print("Classifying test data using logistic regression model...")
 # Pre-process and predicting wether test candidate is machine or human translation
 test = open('data/test.txt', 'r')
 lines = test.readlines()
@@ -61,7 +59,7 @@ bleu_scores = np.asarray(bleu_lists[0]).reshape(-1, 1)
 bleu_labels = bleu_lists[1]
 labels_to_binary = np.asarray([1 if label == 'H' else 0 for label in bleu_labels])
 
-
+print("Classifying test data using logistic regression model...")
 y_pred = clf.predict(bleu_scores)
 
 f1_score = f1_score(labels_to_binary, y_pred)
