@@ -10,6 +10,7 @@ def is_float(value):
   except:
     return False
 
+print("Training logistic regression model on training data...")
 # Pre-process and training logistic regression model on training data
 train = open('data/train.txt', 'r')
 lines = train.readlines()
@@ -41,6 +42,7 @@ clf = LogisticRegression(random_state=0, solver='lbfgs').fit(bleu_scores, labels
 train.close()
 
 
+print("Classifying test data using logistic regression model...")
 # Pre-process and predicting wether test candidate is machine or human translation
 test = open('data/test.txt', 'r')
 lines = test.readlines()
